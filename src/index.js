@@ -5,13 +5,16 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
 import TodoProvider from "./context/todoContext";
+import AuthProvider from "./context/AuthContext";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <TodoProvider>
-        <App />
-      </TodoProvider>
+      <AuthProvider>
+        <TodoProvider>
+          <App />
+        </TodoProvider>
+      </AuthProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")
